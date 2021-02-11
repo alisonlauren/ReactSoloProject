@@ -28,7 +28,7 @@ export default function QuoteList() {
             <br />
             <br />
             
-            <Card style={{ "margin-left": "40%", "margin-right": "40%" }}>
+            <Card style={{ "margin-left": "20%", "margin-right": "20%" }}>
                 <Card.Body>
                     <Card.Text>
                         "{quotes}"
