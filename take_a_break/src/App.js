@@ -10,7 +10,7 @@ function App() {
             <Jumbotron fluid style={{ "background-color": "teal", "color": "white"}}>
                 <Container>
                     <h1 style={{"margin-left": "38%"}}>Kanye West </h1>
-                    <p style={{"margin-left": "38%"}}>
+                    <p style={{"margin-left": "42%"}}>
                         An overflowing well of wisdom
     </p>
                 </Container>
