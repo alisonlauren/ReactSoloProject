@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Quote from '../Quote/Quote'
+
 
 
 export default function QuoteList() {
