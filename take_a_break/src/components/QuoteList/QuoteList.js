@@ -1,43 +1,36 @@
-import React, { Component } from 'react'
+import React, { useEffect, useState } from 'react'
 import Quote from '../Quote/Quote'
 
-export default class QuoteList extends Component {
-    constructor() {
-        super();
 
-        this.state = {
-            quotes: []
-        }
-    }
+export default function QuoteList() {
+    const [ quotes, setQuotes ] = useState([]);
+    
 
-    loadQuotes = () => {
+    const loadQuotes = () => {
         fetch('https://raw.githubusercontent.com/ajzbc/kanye.rest/quotes/quotes.json')
-            .then(res => res.json())
+        .then(res => res.json())
             .then(data => {
-                this.setState({
-                    quotes: data
-                })
-            })
+                console.log(data)
+                setQuotes(data);
+                setQuotes(data[Math.floor(Math.random() * 62)])
+        })
+    } 
+    
 
-    }
+    useEffect(() => {
+        loadQuotes();
+}, [])
 
-    componentDidMount() {
-        this.loadQuotes();
-    }
-
-    render() {
         return (
             <div>
-                
-                { this.state.quotes.map((quote) => {
-                    return <Quote key={quote.id} quoteData={quote} />
-
-                }) }
+                <button onClick={loadQuotes}>Click Here For Kanye Quotes</button>
+                <br />
+                {quotes}
 
             </div>
         )
     }
-}
+
 
 
 
